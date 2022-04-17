@@ -43,7 +43,6 @@
             <groupId>org.jfxtras</groupId>
             <artifactId>jmetro</artifactId>
             <version>11.6.15</version>
-            <type>pom</type>
         </dependency>
 
     </dependencies>

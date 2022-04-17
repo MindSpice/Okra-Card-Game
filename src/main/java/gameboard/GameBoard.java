@@ -23,10 +23,28 @@ import java.util.ResourceBundle;
 
 public class GameBoard implements Initializable {
 
-    public ImageView hand_action_5;
+    @javafx.fxml.FXML
+    private Button p1_card_1, p1_card_2, p1_card_ability, p1_light_attack, p1_heavy_attack, p2_card_1, p2_card_2,
+            p2_card_ability, p2_light_attack, p2_heavy_attack,p3_card_1, p3_card_2, p3_card_ability, p3_light_attack,
+            p3_heavy_attack;
+
+    @javafx.fxml.FXML
+    private ImageView hand_ability_1, hand_ability_2, hand_ability_3,hand_action_1, hand_action_2 ,hand_action_3 ,
+            hand_action_4, hand_action_5, hand_action_6, hand_power_1, hand_power_2,hand_power_3, p1_card_1_img,
+            p1_card_2_img, p1_card_ability_img, p1_card_power_img, p2_card_1_img, p2_card_2_img, p2_card_ability_img,
+            p2_card_power_img ,p3_card_1_img, p3_card_2_img, p3_card_ability_img, p3_card_power_img, p1_pawn_img,
+            p2_pawn_img, p3_pawn_img, enemy_avatar;
+    @javafx.fxml.FXML
+    private TextField p1_hp, p1_mp, p1_sp, p1_dp, p1_status_1, p1_status_2, p1_status_3, p1_status_4, p2_hp,p2_mp, p2_sp,
+            p2_dp, p2_status_1, p2_status_2, p2_status_3,p2_status_4, p3_hp, p3_mp, p3_sp, p3_dp, p3_status_1,
+            p3_status_2, p3_status_3, p3_status_4;
+    @javafx.fxml.FXML
+    private TextArea p1_card_1_text, p1_card_2_text, p1_card_ability_text, p1_card_power_text, p2_card_1_text,
+            p2_card_2_text, p2_card_ability_text, p2_card_power_text,p3_card_1_text, p3_card_2_text, p3_card_ability_text,
+            p3_card_power_text;
+
     @javafx.fxml.FXML
     private Canvas arena_canvas;
-
 
     Pawn[] playerPawns = new Pawn[3];
     Pawn[] enemyPawns = new Pawn[3];
@@ -36,167 +54,14 @@ public class GameBoard implements Initializable {
     double canvasMinY;
     Pawn selectedEnemyPawn;
     Pawn selectedPlayerPawn;
-
     public static GraphicsContext gc;
     public static double time;
-    @javafx.fxml.FXML
-    private TextField p2_mp;
-    @javafx.fxml.FXML
-    private TextField p1_hp;
-    @javafx.fxml.FXML
-    private Button p3_card_1;
-    @javafx.fxml.FXML
-    private TextArea p1_card_power_text;
-    @javafx.fxml.FXML
-    private Button p3_card_2;
-    @javafx.fxml.FXML
-    private ImageView hand_ability_1;
-    @javafx.fxml.FXML
-    private Button p2_card_1;
-    @javafx.fxml.FXML
-    private ImageView hand_ability_2;
-    @javafx.fxml.FXML
-    private ImageView hand_ability_3;
-    @javafx.fxml.FXML
-    private ImageView p2_card_1_img;
-    @javafx.fxml.FXML
-    private ImageView p2_card_power_img;
-    @javafx.fxml.FXML
-    private TextField p1_dp;
-    @javafx.fxml.FXML
-    private TextField p3_status_3;
-    @javafx.fxml.FXML
-    private TextField p3_status_4;
-    @javafx.fxml.FXML
-    private TextField p3_status_1;
-    @javafx.fxml.FXML
-    private Button p1_light_attack;
-    @javafx.fxml.FXML
-    private TextField p3_status_2;
-    @javafx.fxml.FXML
-    private ImageView hand_action_6;
-    @javafx.fxml.FXML
-    private ImageView p2_card_2_img;
-    @javafx.fxml.FXML
-    private ImageView hand_action_2;
-    @javafx.fxml.FXML
-    private ImageView hand_action_1;
-    @javafx.fxml.FXML
-    private ImageView hand_action_4;
-    @javafx.fxml.FXML
-    private ImageView hand_action_3;
-    @javafx.fxml.FXML
-    private TextField p3_sp;
-    @javafx.fxml.FXML
-    private TextArea p1_card_ability_text;
-    @javafx.fxml.FXML
-    private TextField p1_mp;
-    @javafx.fxml.FXML
-    private ImageView hand_power_2;
-    @javafx.fxml.FXML
-    private ImageView hand_power_3;
-    @javafx.fxml.FXML
-    private ImageView p3_pawn_img;
-    @javafx.fxml.FXML
-    private TextArea p3_card_power_text;
-    @javafx.fxml.FXML
-    private ImageView hand_power_1;
-    @javafx.fxml.FXML
-    private Button p2_heavy_attack;
-    @javafx.fxml.FXML
-    private TextArea p2_card_ability_text;
-    @javafx.fxml.FXML
-    private Button p1_heavy_attack;
-    @javafx.fxml.FXML
-    private Button p3_heavy_attack;
-    @javafx.fxml.FXML
-    private ImageView p1_card_1_img;
-    @javafx.fxml.FXML
-    private TextArea p2_card_1_text;
-    @javafx.fxml.FXML
-    private TextArea p3_card_ability_text;
-    @javafx.fxml.FXML
-    private TextArea p1_card_1_text;
-    @javafx.fxml.FXML
-    private Button p2_card_2;
-    @javafx.fxml.FXML
-    private TextField p2_sp;
-    @javafx.fxml.FXML
-    private ImageView p2_pawn_img;
-    @javafx.fxml.FXML
-    private ImageView p1_card_2_img;
-    @javafx.fxml.FXML
-    private TextField p3_hp;
-    @javafx.fxml.FXML
-    private ImageView p1_pawn_img;
-    @javafx.fxml.FXML
-    private ImageView p1_card_ability_img;
-    @javafx.fxml.FXML
-    private TextField p3_dp;
-    @javafx.fxml.FXML
-    private TextArea p3_card_1_text;
-    @javafx.fxml.FXML
-    private TextArea p2_card_power_text;
-    @javafx.fxml.FXML
-    private ImageView p2_card_ability_img;
-    @javafx.fxml.FXML
-    private ImageView p3_card_1_img;
-    @javafx.fxml.FXML
-    private ImageView p3_card_power_img;
-    @javafx.fxml.FXML
-    private TextField p1_sp;
-    @javafx.fxml.FXML
-    private TextArea p1_card_2_text;
-    @javafx.fxml.FXML
-    private TextArea p3_card_2_text;
-    @javafx.fxml.FXML
-    private TextField p3_mp;
-    @javafx.fxml.FXML
-    private TextArea p2_card_2_text;
-    @javafx.fxml.FXML
-    private TextField p2_status_4;
-    @javafx.fxml.FXML
-    private ImageView p3_card_ability_img;
-    @javafx.fxml.FXML
-    private Button p2_card_ability;
-    @javafx.fxml.FXML
-    private TextField p2_status_1;
-    @javafx.fxml.FXML
-    private Button p1_card_ability;
-    @javafx.fxml.FXML
-    private TextField p2_status_3;
-    @javafx.fxml.FXML
-    private TextField p2_hp;
-    @javafx.fxml.FXML
-    private TextField p2_status_2;
-    @javafx.fxml.FXML
-    private ImageView p3_card_2_img;
-    @javafx.fxml.FXML
-    private Button p3_card_ability;
-    @javafx.fxml.FXML
-    private Button p3_light_attack;
-    @javafx.fxml.FXML
-    private Button p2_light_attack;
-    @javafx.fxml.FXML
-    private ImageView p1_card_power_img;
-    @javafx.fxml.FXML
-    private Button p1_card_1;
-    @javafx.fxml.FXML
-    private Button p1_card_2;
-    @javafx.fxml.FXML
-    private TextField p1_status_2;
-    @javafx.fxml.FXML
-    private ImageView enemy_avatar;
-    @javafx.fxml.FXML
-    private TextField p1_status_1;
-    @javafx.fxml.FXML
-    private TextField p1_status_4;
-    @javafx.fxml.FXML
-    private TextField p1_status_3;
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
         canvasMinX = arena_canvas.getBoundsInParent().getMinX();
         canvasMinY = arena_canvas.getBoundsInParent().getMinY();

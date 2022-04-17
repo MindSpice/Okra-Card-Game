@@ -11,6 +11,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
+
 public class Main extends Application {
 
     //TODO try .clear on connections table so it doesn't null out
@@ -21,6 +22,7 @@ public class Main extends Application {
     static Scale scale;
     static Stage stage;
 
+
     @Override
     public void start(Stage stage) throws Exception {
 //            Parent root = FXMLLoader.load(getClass().getResource("gui/FarmOverview.fxml"));
@@ -30,9 +32,13 @@ public class Main extends Application {
 //        }
 
 
+
+
         final int initWidth = 1600;      //initial width
         final int initHeight = 900;    //initial height
         final Pane root = new Pane();   //necessary evil
+
+
 
 
         Pane controller = FXMLLoader.load(getClass().getResource("/gui/GameBoard.fxml"));   //initial view
@@ -50,6 +56,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.setResizable(true);
         this.stage = stage;
+
 
         stage.show();
 //        add listener for the use of scene.setRoot()
