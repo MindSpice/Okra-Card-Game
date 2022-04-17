@@ -4,7 +4,7 @@ package pawn;
 
 import animation.Attack;
 import animation.Move;
-import asset.HealthDisplay;
+import component.HealthDisplay;
 import entity.GraphicObject;
 import component.AnimatedSprite;
 import card.Card;
@@ -35,6 +35,7 @@ public class Pawn extends GraphicObject {
     Position pos;
     State state = IDLE;
     int hpDisplayOffset;
+    final double homeX;
     HealthDisplay health = new HealthDisplay("enemy");
 
     // Stats Contexts
@@ -143,6 +144,7 @@ public class Pawn extends GraphicObject {
 
         this.posX += pos.getX();
         this.posY = pos.getY();
+        this.homeX = pos.getX();
 
 
 
@@ -212,10 +214,11 @@ public class Pawn extends GraphicObject {
 
 
     public void attack(Pawn enemy) {
+        int damage = 10;
         this.state = CHARGE;
         move = new Move(this, enemy, chargeAnimation);
-        attack = new Attack(this, enemy, attackAnimation);
-        
+        attack = new Attack(this, enemy, attackAnimation,damage);
+
     }
 
 

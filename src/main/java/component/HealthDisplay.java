@@ -1,6 +1,7 @@
-package asset;
+package component;
 
 
+import asset.SpriteLoader;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;

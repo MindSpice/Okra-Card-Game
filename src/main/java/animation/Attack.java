@@ -9,11 +9,13 @@ import pawn.Pawn;
 public class Attack extends Animation{
     double endTime;
     Pawn target;
+    int damage;
 
-    public Attack(GraphicObject pawn, Pawn target, AnimatedSprite animation) {
+    public Attack(GraphicObject pawn, Pawn target, AnimatedSprite animation,int damage) {
         this.animatedObject = pawn;
         this.animation = animation;
         this.target = target;
+        this.damage = damage;
 
     }
 
@@ -21,9 +23,11 @@ public class Attack extends Animation{
         if (endTime > GameBoard.getTime()) {
             draw();
             target.setState(Pawn.State.DEFEND);
+
             return false;
         } else {
             target.setState(Pawn.State.IDLE);
+            target.setHp(target.getHp() - this.damage);
             return true;
         }
     }

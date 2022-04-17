@@ -32,13 +32,9 @@ public class Main extends Application {
 //        }
 
 
-
-
         final int initWidth = 1600;      //initial width
         final int initHeight = 900;    //initial height
         final Pane root = new Pane();   //necessary evil
-
-
 
 
         Pane controller = FXMLLoader.load(getClass().getResource("/gui/GameBoard.fxml"));   //initial view
