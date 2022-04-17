@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #8A9A5B;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameboard.GameBoard">
+   <children>
+      <AnchorPane layoutY="550.0" prefHeight="350.0" prefWidth="1066.0">
+         <children>
+            <Separator layoutX="530.0" layoutY="-23.0" orientation="VERTICAL" prefHeight="372.0" prefWidth="5.0">
+               <effect>
+                  <DropShadow height="1.0" radius="0.0" width="1.0" />
+               </effect></Separator>
+            <VBox layoutY="-15.0" prefHeight="350.0" prefWidth="530.0" spacing="30.0">
+               <children>
+                  <HBox prefHeight="175.0" prefWidth="530.0" spacing="50.0">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="hand_action_1" fitHeight="160.0" fitWidth="114.285" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="hand_action_2" fitHeight="160.0" fitWidth="114.285" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="hand_action_3" fitHeight="160.0" fitWidth="114.285" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="175.0" prefWidth="530.0" spacing="50.0">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <children>
+                        <ImageView fx:id="hand_action_4" fitHeight="160.0" fitWidth="114.285" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="hand_action_5" fitHeight="160.0" fitWidth="114.285" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="hand_action_6" fitHeight="160.0" fitWidth="114.285" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@createcard.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="10.0" radius="7.0" width="20.0" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox layoutX="530.0" layoutY="-15.0" prefHeight="175.0" prefWidth="536.0" spacing="50.0">
+               <padding>
+                  <Insets left="45.0" />
+               </padding>
+               <children>
+                  <ImageView fx:id="hand_ability_1" fitHeight="160.0" fitWidth="114.285" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="hand_ability_2" fitHeight="160.0" fitWidth="114.285" layoutX="55.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="hand_ability_3" fitHeight="160.0" fitWidth="114.285" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox layoutX="530.0" layoutY="173.0" prefHeight="175.0" prefWidth="536.0" spacing="50.0">
+               <padding>
+                  <Insets left="45.0" />
+               </padding>
+               <children>
+                  <ImageView fx:id="hand_power_1" fitHeight="160.0" fitWidth="114.285" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="hand_power_2" fitHeight="160.0" fitWidth="114.285" layoutX="55.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="hand_power_3" fitHeight="160.0" fitWidth="114.285" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@createcard.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow height="10.0" radius="7.0" width="20.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" layoutX="742.0" layoutY="150.0" prefHeight="20.0" prefWidth="114.0" text="Power Deck">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Separator layoutX="856.0" layoutY="159.0" prefHeight="3.0" prefWidth="198.0">
+               <effect>
+                  <DropShadow height="2.0" radius="0.5" width="2.0" />
+               </effect></Separator>
+            <Separator layoutX="536.0" layoutY="161.0" prefHeight="3.0" prefWidth="204.0">
+               <effect>
+                  <DropShadow height="2.0" radius="0.5" width="2.0" />
+               </effect></Separator>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="1064.0" layoutY="-8.0" prefHeight="908.0" prefWidth="536.0" spacing="2.0">
+         <children>
+            <AnchorPane prefHeight="295.0" prefWidth="530.0">
+               <children>
+                  <VBox layoutY="-4.0" prefHeight="295.0" prefWidth="150.0" spacing="5.0">
+                     <children>
+                        <ImageView fx:id="p1_pawn_img" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@testNFT4.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                        </ImageView>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="HP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p1_hp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="DP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p1_dp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="MP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p1_mp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="SP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p1_sp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p1_status_1" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p1_status_2" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p1_status_3" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p1_status_4" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <effect>
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                     </effect>
+                     <padding>
+                        <Insets top="4.0" />
+                     </padding>
+                  </VBox>
+                  <TabPane layoutX="154.0" layoutY="-1.0" prefHeight="296.0" prefWidth="376.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Cards">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="262.0">
+                                 <children>
+                                    <VBox layoutX="153.0" layoutY="14.0" prefHeight="267.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="276.0" prefWidth="377.0" spacing="5.0">
+                                             <children>
+                                                <VBox prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 1">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p1_card_1_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p1_card_1_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 2">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p1_card_2_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p1_card_2_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="110.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Ability">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p1_card_ability_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p1_card_ability_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="210.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Power">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p1_card_power_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p1_card_power_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <padding>
+                                                            <Insets top="2.0" />
+                                                         </padding>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Stats">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Separator prefHeight="0.0" prefWidth="0.0">
+               <effect>
+                  <DropShadow height="2.0" radius="0.5" width="2.0" />
+               </effect>
+            </Separator>
+            <AnchorPane prefHeight="295.0" prefWidth="530.0">
+               <children>
+                  <VBox layoutY="-4.0" prefHeight="295.0" prefWidth="150.0" spacing="5.0">
+                     <children>
+                        <ImageView fx:id="p2_pawn_img" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@testNFT4.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                        </ImageView>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="HP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p2_hp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="DP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p2_dp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="MP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p2_mp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="SP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p2_sp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p2_status_1" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p2_status_2" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p2_status_3" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p2_status_4" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <effect>
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                     </effect>
+                  </VBox>
+                  <TabPane layoutX="154.0" layoutY="-1.0" prefHeight="296.0" prefWidth="376.0" style="-: #454B1B;" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Cards">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="262.0">
+                                 <children>
+                                    <VBox layoutX="153.0" layoutY="14.0" prefHeight="267.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="276.0" prefWidth="377.0" spacing="5.0">
+                                             <children>
+                                                <VBox prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 1">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p2_card_1_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p2_card_1_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 2">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p2_card_2_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p2_card_2_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="110.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Ability">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p2_card_ability_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p2_card_ability_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="210.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Power">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p2_card_power_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p2_card_power_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <padding>
+                                                            <Insets top="2.0" />
+                                                         </padding>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Stats">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="10.0" layoutY="315.0" prefWidth="200.0">
+               <effect>
+                  <DropShadow height="2.0" radius="0.5" width="2.0" />
+               </effect>
+            </Separator>
+            <AnchorPane layoutX="10.0" layoutY="623.0" prefHeight="295.0" prefWidth="530.0">
+               <children>
+                  <VBox layoutY="-4.0" prefHeight="295.0" prefWidth="150.0" spacing="5.0">
+                     <children>
+                        <ImageView fx:id="p3_pawn_img" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@testNFT4.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                        </ImageView>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="HP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p3_hp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="DP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p3_dp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="23.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="MP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p3_mp" prefHeight="25.0" prefWidth="41.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="28.0" text="SP">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="p3_sp" prefHeight="25.0" prefWidth="40.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p3_status_1" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p3_status_2" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="150.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="p3_status_3" prefHeight="25.0" prefWidth="71.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="p3_status_4" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="70.0" text="999">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <effect>
+                        <InnerShadow height="10.0" radius="4.5" width="10.0" />
+                     </effect>
+                  </VBox>
+                  <TabPane layoutX="154.0" layoutY="-1.0" prefHeight="296.0" prefWidth="376.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Cards">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="262.0">
+                                 <children>
+                                    <VBox layoutX="153.0" layoutY="14.0" prefHeight="267.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="276.0" prefWidth="377.0" spacing="5.0">
+                                             <children>
+                                                <VBox prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 1">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p3_card_1_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p3_card_1_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Card 2">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p3_card_2_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p3_card_2_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="110.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Ability">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p3_card_ability_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p3_card_ability_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="210.0" layoutY="10.0" prefHeight="267.0" prefWidth="95.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="17.0" prefWidth="90.0" text="Power">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fx:id="p3_card_power_img" fitHeight="125.0" fitWidth="89.285" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@createcard.jpg" />
+                                                         </image>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <TextArea fx:id="p3_card_power_text" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                                                         <padding>
+                                                            <Insets top="2.0" />
+                                                         </padding>
+                                                         <effect>
+                                                            <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                                         </effect>
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                      </TextArea>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Stats">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="207.0" layoutY="511.0" prefHeight="20.0" prefWidth="114.0" text="Action Deck">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="743.0" layoutY="511.0" prefHeight="20.0" prefWidth="114.0" text="Ability Deck">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Separator layoutX="-11.0" layoutY="521.0" prefHeight="3.0" prefWidth="218.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect></Separator>
+      <Separator layoutX="321.0" layoutY="522.0" prefHeight="3.0" prefWidth="425.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect></Separator>
+      <Separator layoutX="857.0" layoutY="520.0" prefHeight="3.0" prefWidth="204.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect></Separator>
+      <VBox layoutX="987.0" layoutY="37.0" prefHeight="474.0" prefWidth="72.0" spacing="1.0" style="-fx-background-color: #8A9A5B;">
+         <children>
+            <ToolBar orientation="VERTICAL" prefHeight="160.0" prefWidth="72.0" style="-fx-background-color: #8A9A5B;">
+              <items>
+                <Button fx:id="p1_light_attack" mnemonicParsing="false" onAction="#p1LightAttack" prefWidth="62.0" text="L Attack" />
+                  <Button fx:id="p1_heavy_attack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#p1HeavyAttack" prefWidth="62.0" text="H Attack" />
+                  <Button fx:id="p1_card_1" layoutX="10.0" layoutY="39.0" mnemonicParsing="false" onAction="#p1Card1" prefHeight="25.0" prefWidth="62.0" text="Card 1" />
+                  <Button fx:id="p1_card_2" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" onAction="#p1Card2" prefHeight="25.0" prefWidth="62.0" text="Card 2" />
+                  <Button fx:id="p1_card_ability" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#p1CardAbility" prefHeight="25.0" prefWidth="62.0" text="Ability" />
+              </items>
+               <effect>
+                  <InnerShadow height="20.0" radius="7.0" width="10.0" />
+               </effect>
+            </ToolBar>
+            <ToolBar orientation="VERTICAL" prefHeight="160.0" prefWidth="72.0" style="-fx-background-color: #8A9A5B;">
+               <items>
+                  <Button fx:id="p2_light_attack" mnemonicParsing="false" onAction="#p2LightAttack" prefWidth="62.0" text="L Attack" />
+                  <Button fx:id="p2_heavy_attack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#p2HeavyAttack" prefHeight="25.0" prefWidth="62.0" text="H Attack" />
+                  <Button fx:id="p2_card_1" layoutX="10.0" layoutY="39.0" mnemonicParsing="false" onAction="#p2Card1" prefHeight="25.0" prefWidth="62.0" text="Card 1" />
+                  <Button fx:id="p2_card_2" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" onAction="#p2Card2" prefHeight="25.0" prefWidth="62.0" text="Card 2" />
+                  <Button fx:id="p2_card_ability" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#p2CardAbility" prefHeight="25.0" prefWidth="62.0" text="Ability" />
+               </items>
+               <effect>
+                  <InnerShadow height="15.0" radius="5.75" width="10.0" />
+               </effect>
+            </ToolBar>
+            <ToolBar orientation="VERTICAL" prefHeight="160.0" prefWidth="72.0" style="-fx-background-color: #8A9A5B;">
+               <items>
+                  <Button fx:id="p3_light_attack" mnemonicParsing="false" onAction="#p3LightAttack" prefWidth="62.0" text="L Attack" />
+                  <Button fx:id="p3_heavy_attack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#p3HeavyAttack" prefHeight="25.0" prefWidth="62.0" text="H Attack" />
+                  <Button fx:id="p3_card_1" layoutX="10.0" layoutY="39.0" mnemonicParsing="false" onAction="#p3Card1" prefHeight="25.0" prefWidth="62.0" text="Card 1" />
+                  <Button fx:id="p3_card_2" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" onAction="#p3Card2" prefHeight="25.0" prefWidth="62.0" text="Card 2" />
+                  <Button fx:id="p3_card_ability" layoutX="10.0" layoutY="97.0" mnemonicParsing="false" onAction="#p3CardAbility" prefHeight="25.0" prefWidth="62.0" text="Ability" />
+               </items>
+               <effect>
+                  <InnerShadow height="15.0" radius="5.75" width="10.0" />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ToolBar>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </VBox>
+      <Separator layoutX="1051.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="900.0" prefWidth="16.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect>
+         <padding>
+            <Insets right="-4.0" />
+         </padding>
+      </Separator>
+      <Separator layoutX="106.0" layoutY="37.0" prefHeight="3.0" prefWidth="955.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect>
+         <padding>
+            <Insets bottom="2.0" top="3.0" />
+         </padding>
+      </Separator>
+      <Separator layoutX="1587.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="900.0" prefWidth="16.0" scaleX="1.2">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect>
+         <padding>
+            <Insets left="7.0" />
+         </padding>
+      </Separator>
+      <VBox prefHeight="520.0" prefWidth="105.0">
+         <children>
+            <ImageView fx:id="enemy_avatar" fitHeight="100.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@testNFT4.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="2.0" top="2.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox prefHeight="20.0" prefWidth="29.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#screen_full" prefHeight="25.0" prefWidth="40.0" text="Full" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#screen_min" prefHeight="25.0" prefWidth="40.0" text="Min">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin></HBox>
+         </children>
+      </VBox>
+      <Separator layoutX="100.0" layoutY="42.0" orientation="VERTICAL" prefHeight="470.0" prefWidth="16.0">
+         <effect>
+            <DropShadow height="2.0" radius="0.5" width="2.0" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="2.0" right="2.0" />
+         </padding>
+      </Separator>
+      <Canvas fx:id="arena_canvas" height="470.0" layoutX="107.0" layoutY="42.0" width="881.0" />
+   </children>
+</AnchorPane>
