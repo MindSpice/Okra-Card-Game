@@ -33,6 +33,35 @@ public class FileLoader {
         }
         return images;
     }
+    public static Image imgSingle (String path){
+
+        File f = new File(path);
+        Image image = null;
+
+        try {
+            BufferedImage bf = ImageIO.read(f);
+            image = SwingFXUtils.toFXImage(bf, null);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return image;
+    }
+
+    public static BufferedImage imgSingleBuffered (String path){
+
+        File f = new File(path);
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(f);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return image;
+    }
+
+
 
 
 }

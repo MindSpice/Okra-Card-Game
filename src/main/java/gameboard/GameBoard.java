@@ -1,5 +1,6 @@
 package gameboard;
 
+import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -10,8 +11,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import pawn.Pawn;
@@ -27,7 +33,6 @@ public class GameBoard implements Initializable {
     private Button p1_card_1, p1_card_2, p1_card_ability, p1_light_attack, p1_heavy_attack, p2_card_1, p2_card_2,
             p2_card_ability, p2_light_attack, p2_heavy_attack,p3_card_1, p3_card_2, p3_card_ability, p3_light_attack,
             p3_heavy_attack;
-
     @javafx.fxml.FXML
     private ImageView hand_ability_1, hand_ability_2, hand_ability_3,hand_action_1, hand_action_2 ,hand_action_3 ,
             hand_action_4, hand_action_5, hand_action_6, hand_power_1, hand_power_2,hand_power_3, p1_card_1_img,
@@ -56,6 +61,7 @@ public class GameBoard implements Initializable {
     Pawn selectedPlayerPawn;
     public static GraphicsContext gc;
     public static double time;
+    Image bg = new Image("/Backgrounds/darkForest.png");
 
 
 
@@ -65,8 +71,13 @@ public class GameBoard implements Initializable {
 
         canvasMinX = arena_canvas.getBoundsInParent().getMinX();
         canvasMinY = arena_canvas.getBoundsInParent().getMinY();
+        BackgroundImage bg = new BackgroundImage(new Image("/Backgrounds/Desert.png",32,32,false,true),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
         gc = arena_canvas.getGraphicsContext2D();
+
         arena_canvas.setOnMouseClicked(e-> this.select(e));
+
 
 
         gc.setFill(Color.DIMGRAY);
@@ -129,19 +140,23 @@ public class GameBoard implements Initializable {
         final long timeStart = System.currentTimeMillis();
 
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(0.017),                // 60 FPS
+                Duration.seconds(0.016),                // 60 FPS
                 new EventHandler<ActionEvent>()
                 {
                     public void handle(ActionEvent ae) {
                         time = (System.currentTimeMillis() - timeStart) / 1000.0;
 
                         gc.fillRect(0, 0, arena_canvas.getWidth(), arena_canvas.getHeight());
+                        gc.drawImage(bg,0,0);
 
                         for (int i =0; i < 3; i++) {
-                            if (!enemyPawns[i].isDead()) enemyPawns[i].draw(time);
-                            if (!playerPawns[i].isDead()) playerPawns[i].draw(time);
+                            if (!enemyPawns[i].isDead()){
+                                enemyPawns[i].draw(time);
+                            }
+                            if (!playerPawns[i].isDead()){
+                                playerPawns[i].draw(time);
+                            }
                         }
-
                     }
                 });
         gameLoop.getKeyFrames().add(kf);

@@ -4,12 +4,14 @@ package asset;
 import javafx.scene.image.Image;
 import util.FileLoader;
 
+import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.HashMap;
 
 public class SpriteLoader {
 
     static HashMap<String, Image[]> cachedSprites = new HashMap<>();
+    static HashMap<String, Image[]> cachedNum = new HashMap<>();
     static String spriteDir = "/Assets/Sprites/";
 
 
@@ -23,7 +25,7 @@ public class SpriteLoader {
 //        }
 //    }
 
-    public static Image[] importSprites(Character type){
+    public static Image[] importCharSprites(Character type){
 
         // Needs some fuckery to make work, but should allow for easy enum passes
         // Downside is the messy if statements
@@ -47,6 +49,16 @@ public class SpriteLoader {
             }
         }
         return null;
+    }
+
+    public static BufferedImage[] importNumSprites() {
+        BufferedImage[] images = new BufferedImage[2];
+        URL url = SpriteLoader.class.getResource(spriteDir + "Numbers/n_sheet_green.png");
+        images[0] = FileLoader.imgSingleBuffered(url.getPath());
+        url = SpriteLoader.class.getResource(spriteDir + "Numbers/n_sheet_red.png");
+        images[1] = FileLoader.imgSingleBuffered(url.getPath());
+
+        return images;
     }
 
 }

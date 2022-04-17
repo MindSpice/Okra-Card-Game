@@ -4,6 +4,7 @@ package pawn;
 
 import animation.Attack;
 import animation.Move;
+import asset.HealthDisplay;
 import entity.GraphicObject;
 import component.AnimatedSprite;
 import card.Card;
@@ -21,6 +22,7 @@ import java.util.List;
 import static pawn.Pawn.State.*;
 
 
+
 public class Pawn extends GraphicObject {
 
 
@@ -32,7 +34,8 @@ public class Pawn extends GraphicObject {
     boolean dead;
     Position pos;
     State state = IDLE;
-    int hpOffset;
+    int hpDisplayOffset;
+    HealthDisplay health = new HealthDisplay("enemy");
 
     // Stats Contexts
     int hp;
@@ -66,14 +69,34 @@ public class Pawn extends GraphicObject {
 
 
 
-    //
-    public enum Position {
-        ONE(50, 35),
-        TWO(50, 185),
-        THREE(50, 335);
 
-       final double x;
-       final double y;
+//    public enum Position {
+//        ONE(50, 35),
+//        TWO(50, 185),
+//        THREE(50, 335);
+//
+//       final double x;
+//       final double y;
+//
+//        Position(double x, double y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//        public double getX() {
+//            return x;
+//        }
+//        public double getY() {
+//            return y;
+//        }
+//    }
+
+    public enum Position {
+        ONE(50, 175),
+        TWO(135, 250),
+        THREE(50, 350);
+
+        final double x;
+        final double y;
 
         Position(double x, double y) {
             this.x = x;
@@ -88,6 +111,7 @@ public class Pawn extends GraphicObject {
     }
 
 
+
     public Pawn(String name, int hp, int mp, int dp, int sp, Image[] animationFrames, Position pos, boolean isPlayer) {
         Image[] frames = animationFrames;
         super.gc = GameBoard.getGraphicsContext();
@@ -100,8 +124,16 @@ public class Pawn extends GraphicObject {
 
 
         if (isPlayer) {
-        frames = ImageUtil.mirror(frames); // mirror frames for easier asset management;
-        posX += 700;    // Move X placement over to players side
+            frames = ImageUtil.mirror(frames); // mirror frames for easier asset management;
+            if (pos == Position.TWO) {
+                posX += 530;
+            } else {
+                posX += 700;    // Move X placement over to players side
+            }
+
+            this.hpDisplayOffset = 8;
+        } else {
+            this.hpDisplayOffset = - 4;
         }
 
         this.idleAnimation = new AnimatedSprite(Arrays.copyOfRange(frames, 0, 6), .2);
@@ -112,10 +144,18 @@ public class Pawn extends GraphicObject {
         this.posX += pos.getX();
         this.posY = pos.getY();
 
+
+
         this.isPlayerPawn = isPlayer;
         this.width = animationFrames[0].getWidth();     //Needs to be set for mouse over interactions
         this.height = animationFrames[0].getHeight();   //First idle frame grabbed as "good enough"
 
+    }
+
+    public void drawHP() {
+        Image i = health.getHealth(hp);
+        gc.setEffect(null);
+        gc.drawImage(i,posX + (i.getWidth() / 2) + hpDisplayOffset,posY - (height / 2) + 15);
     }
 
 
@@ -153,11 +193,11 @@ public class Pawn extends GraphicObject {
 
             case DEFEND:
                 gc.drawImage(defendAnimation.update(time), posX, posY);
-
                 break;
 
             case IDLE:
                 gc.drawImage(idleAnimation.update(time), posX, posY);
+                drawHP();
                 break;
             case RESET:
 
@@ -175,13 +215,25 @@ public class Pawn extends GraphicObject {
         this.state = CHARGE;
         move = new Move(this, enemy, chargeAnimation);
         attack = new Attack(this, enemy, attackAnimation);
-
+        
     }
 
 
     public void resetPos(){
         // ternary shifts x +700 for player pawns, since they are declared from an enum and constructor originally sets #spaghetti
-        move = new Move((isPlayerPawn ? pos.getX() + 700 : pos.getX()),
+
+        double homeX = 0;
+        if (isPlayerPawn) {
+            if (pos == Position.TWO) {
+                homeX = posX + 530;
+            }else {
+                homeX = posX + 700;
+            }
+        } else {
+            posX = pos.getX();
+        }
+
+        move = new Move(homeX,
                 pos.getY(),this.posX,this.posY,this, idleAnimation);
 
     }
