@@ -1,15 +1,14 @@
-package pawn;
+package entity;
 
 
 
 import animation.Attack;
 import animation.Move;
 import component.HealthDisplay;
-import entity.GraphicObject;
 import component.AnimatedSprite;
 import card.Card;
-import effect.Power;
-import effect.Status;
+import entity.effect.Power;
+import entity.effect.Status;
 import gameboard.GameBoard;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -19,13 +18,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static pawn.Pawn.State.*;
+import static entity.Pawn.State.*;
 
 
 
 public class Pawn extends GraphicObject {
-
-
 
 
     //Object Context
@@ -36,7 +33,7 @@ public class Pawn extends GraphicObject {
     State state = IDLE;
     int hpDisplayOffset;
     final double homeX;
-    HealthDisplay health = new HealthDisplay("enemy");
+    HealthDisplay health;
 
     // Stats Contexts
     int hp;
@@ -49,7 +46,10 @@ public class Pawn extends GraphicObject {
     Card card2;
     Card ability;
     Power power;
-    List<Status> statusEffects = new ArrayList<>();
+
+    List<Status> statusBuffs = new ArrayList<>();
+    List<Status> statusDeBuffs = new ArrayList<>();
+
 
     // Animations
     AnimatedSprite chargeAnimation;
@@ -65,10 +65,9 @@ public class Pawn extends GraphicObject {
         CHARGE,
         DEFEND,
         IDLE,
-        RESET
+        RESET,
+        DEAD;
     }
-
-
 
 
 //    public enum Position {
@@ -126,6 +125,7 @@ public class Pawn extends GraphicObject {
 
         if (isPlayer) {
             frames = ImageUtil.mirror(frames); // mirror frames for easier asset management;
+
             if (pos == Position.TWO) {
                 posX += 530;
             } else {
@@ -133,10 +133,13 @@ public class Pawn extends GraphicObject {
             }
 
             this.hpDisplayOffset = 8;
+            this.health = new HealthDisplay("player");
         } else {
+            this.health = new HealthDisplay("enemy");
             this.hpDisplayOffset = - 4;
         }
 
+        //TODO: Hard coded frame ranges, needs made more modular.
         this.idleAnimation = new AnimatedSprite(Arrays.copyOfRange(frames, 0, 6), .2);
         this.defendAnimation = new AnimatedSprite(Arrays.copyOfRange(frames, 7, 13), .2);
         this.chargeAnimation = new AnimatedSprite(Arrays.copyOfRange(frames, 14, 15), .2);
@@ -145,8 +148,6 @@ public class Pawn extends GraphicObject {
         this.posX += pos.getX();
         this.posY = pos.getY();
         this.homeX = pos.getX();
-
-
 
         this.isPlayerPawn = isPlayer;
         this.width = animationFrames[0].getWidth();     //Needs to be set for mouse over interactions
@@ -159,8 +160,6 @@ public class Pawn extends GraphicObject {
         gc.setEffect(null);
         gc.drawImage(i,posX + (i.getWidth() / 2) + hpDisplayOffset,posY - (height / 2) + 15);
     }
-
-
 
     public void draw(double time) {
         DropShadow enemy = new DropShadow(6, 2, 2, Color.RED);
@@ -176,7 +175,7 @@ public class Pawn extends GraphicObject {
         switch (this.state) {
 
             case CHARGE:
-
+                //plays charge animation until collision is reached, looped by gameloop
                 if(move.updateUntilCollide()) {
                     state = ATTACK;
                     move = null;
@@ -185,7 +184,7 @@ public class Pawn extends GraphicObject {
                 break;
 
             case ATTACK:
-
+                // plays attack animation until it is finished then triggers a reset(retreat state)
                 if(attack.attack()) {
                     state = RESET;
                     attack = null;
@@ -201,8 +200,9 @@ public class Pawn extends GraphicObject {
                 gc.drawImage(idleAnimation.update(time), posX, posY);
                 drawHP();
                 break;
-            case RESET:
 
+            case RESET:
+                // moves pawn back until it reaches it's original home position
                 if(move.updateUntilPos()) {
                     state = IDLE;
                     move = null;
@@ -224,7 +224,7 @@ public class Pawn extends GraphicObject {
 
     public void resetPos(){
         // ternary shifts x +700 for player pawns, since they are declared from an enum and constructor originally sets #spaghetti
-
+        //TODO fix this mess so it properly resets if pawn has forward offset, likely needs a helper function.
         double homeX = 0;
         if (isPlayerPawn) {
             if (pos == Position.TWO) {
@@ -284,6 +284,62 @@ public class Pawn extends GraphicObject {
 
     public boolean isDead(){
         return this.dead;
+    }
+
+    public boolean isPlayerPawn() {
+        return isPlayerPawn;
+    }
+
+    public void setPlayerPawn(boolean playerPawn) {
+        isPlayerPawn = playerPawn;
+    }
+
+    public Card getCard1() {
+        return card1;
+    }
+
+    public void setCard1(Card card1) {
+        this.card1 = card1;
+    }
+
+    public Card getCard2() {
+        return card2;
+    }
+
+    public void setCard2(Card card2) {
+        this.card2 = card2;
+    }
+
+    public Card getAbility() {
+        return ability;
+    }
+
+    public void setAbility(Card ability) {
+        this.ability = ability;
+    }
+
+    public Power getPower() {
+        return power;
+    }
+
+    public void setPower(Power power) {
+        this.power = power;
+    }
+
+    public List<Status> getStatusBuffs() {
+        return statusBuffs;
+    }
+
+    public void setStatusBuffs(List<Status> statusBuffs) {
+        this.statusBuffs = statusBuffs;
+    }
+
+    public List<Status> getStatusDeBuffs() {
+        return statusDeBuffs;
+    }
+
+    public void setStatusDeBuffs(List<Status> statusDeBuffs) {
+        this.statusDeBuffs = statusDeBuffs;
     }
 
 }

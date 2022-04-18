@@ -53,8 +53,10 @@ public class SpriteLoader {
 
     public static BufferedImage[] importNumSprites() {
         BufferedImage[] images = new BufferedImage[2];
+
         URL url = SpriteLoader.class.getResource(spriteDir + "Numbers/n_sheet_green.png");
         images[0] = FileLoader.imgSingleBuffered(url.getPath());
+
         url = SpriteLoader.class.getResource(spriteDir + "Numbers/n_sheet_red.png");
         images[1] = FileLoader.imgSingleBuffered(url.getPath());
 

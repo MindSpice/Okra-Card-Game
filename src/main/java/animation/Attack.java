@@ -4,7 +4,7 @@ package animation;
 import component.AnimatedSprite;
 import entity.GraphicObject;
 import gameboard.GameBoard;
-import pawn.Pawn;
+import entity.Pawn;
 
 public class Attack extends Animation{
     double endTime;

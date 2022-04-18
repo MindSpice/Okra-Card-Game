@@ -1,9 +1,11 @@
 package asset;
 
-import pawn.Pawn;
+import entity.Pawn;
 
 public class AssetLoader {
 
+
+    // Init and returns and array of a player/enemies chosen pawns for a match
     public static Pawn[] initPawns(Character char1, Character char2, Character char3, boolean isPlayer) {
         Pawn[] pawns = new Pawn[3];
 

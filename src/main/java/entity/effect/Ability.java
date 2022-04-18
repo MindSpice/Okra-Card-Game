@@ -1,4 +1,4 @@
-package effect;
+package entity.effect;
 
 public enum Ability {
 }

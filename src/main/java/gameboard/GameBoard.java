@@ -1,6 +1,5 @@
 package gameboard;
 
-import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -20,8 +19,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import pawn.Pawn;
-import asset.Character.Warrior;
+import entity.Pawn;
 
 
 import java.net.URL;

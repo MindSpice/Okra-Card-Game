@@ -11,7 +11,6 @@ public interface Character {
         return this.getClass().getSimpleName();
     }
 
-
 //    enum Brute implements Character {
 //        LVL0,
 //        LVL1,
@@ -20,7 +19,6 @@ public interface Character {
 //        LVL4;
 //
 //    }
-
 
     enum Warrior implements Character {
         LVL0(100,20, 20, 50, "Basic Warrior"),
